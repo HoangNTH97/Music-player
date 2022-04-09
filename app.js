@@ -9,6 +9,7 @@ const prevBtn = $('.music-controls-prev');
 const nextBtn = $('.music-controls-next');
 const durationTime = $('.music-timer-duration');
 const remainingTime = $('.music-timer-remaining');
+const inputRange = $('.music-range');
 let isPlaying = true;
 let indexSong = 0;
 const musics = [
@@ -91,6 +92,8 @@ function keyEvent(e) {
 
 function displayTimer() {
   const {duration, currentTime} = song;
+  inputRange.max = duration;
+  inputRange.value = currentTime;
   if (!duration) {
     durationTime.textContent = "00:00";
   } else {
@@ -113,5 +116,9 @@ function formatTimer(number) {
     return `${minutes}:0${seconds}`;
   }
 }
-setInterval(displayTimer, 1000);
+setInterval(displayTimer);
 
+inputRange.addEventListener('change', handleChangeRange);
+function handleChangeRange() {
+  inputRange.value = song.currentTime;
+}
