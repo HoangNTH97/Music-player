@@ -73,11 +73,23 @@ nextBtn.addEventListener("click", () => {
 prevBtn.addEventListener("click", () => {
   changeSong(-1);
 });
+
 song.addEventListener("ended", handleEndedSong);
+playButton.addEventListener("click", playPause);
+document.addEventListener("keydown", keyEvent)
+
+
 
 function handleEndedSong() {
-  changeSong(1);
+  if (indexSong < musics.length -1) {
+    changeSong(1);
+  } else {
+    playPause();
+  }
+  
+  
 } // Ta cần phải viết như này vì khi nào cần nó mới chạy, nếu viết thẳng vào thì nó sẽ luôn được gọi và nó sẽ chạy
+
 
 function changeSong(dir) {
   if (dir === 1) {
@@ -99,8 +111,7 @@ function changeSong(dir) {
   playPause();
 }
 
-playButton.addEventListener("click", playPause);
-document.addEventListener("keydown", keyEvent);
+;
 
 function playPause() {
   if (isPlaying) {

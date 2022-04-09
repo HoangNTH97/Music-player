@@ -66,8 +66,8 @@ body {
   justify-content: flex-end;
   font-size: 1rem;
 }
-.music-header-next {
-  color: #fff;
+.music-header-name {
+  color: rgb(255, 255, 255);
 }
 .music-thumb {
   width: 150px;
@@ -103,19 +103,18 @@ body {
 }
 .music-range::-webkit-slider-runnable-track {
   background-color: #fff;
-  width: 100%;
-  height: 4px;
+  height: 2px;
+  cursor: pointer;
 }
 .music-range::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
+  height: 15px;
+  width: 15px;
   border-radius: 50%;
-  background: #33df3b;
-  margin-top: -6.5px;
+  background-image: linear-gradient(120deg, #8122c0, #60b0de, #160a5e 102%);
+  margin-top: -6.4px;
   cursor: pointer;
-  box-shadow: 1px 1px 15px #fff, 0px 0px 1px #0d0d0d;
-  /* Add cool effects to your sliders! */
+  border: 2px solid #fff;
 }
 .music-timer {
   display: flex;
@@ -177,22 +176,12 @@ body {
 }
 
 .rotate {
-  animation: xoayvong 10s linear 0s infinite;
-  -webkit-animation: xoayvong 10s linear 0s infinite;
-  -moz-animation: xoayvong 10s linear 0s infinite;
-  -o-animation: xoayvong 10s linear 0s infinite;
+  animation: spinner 10s infinite linear;
 }
 
-@-webkit-keyframes xoayvong {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-  }
+@-webkit-keyframes spinner {
   to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
