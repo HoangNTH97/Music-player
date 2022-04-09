@@ -27,6 +27,11 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
   changeSong(-1);
 });
+song.addEventListener('ended', handleEndedSong);
+
+function handleEndedSong() {
+  changeSong(1);
+} // Ta cần phải viết như này vì khi nào cần nó mới chạy, nếu viết thẳng vào thì nó sẽ luôn được gọi và nó sẽ chạy
 
 function changeSong(dir) {
   if (dir === 1) {
@@ -110,15 +115,12 @@ function displayTimer() {
 function formatTimer(number) {
   const minutes = Math.floor(number / 60);
   const seconds = Math.round(number % 60);
-  if (seconds >= 10) {
-    return `${minutes}:${seconds}`;
-  } else {
-    return `${minutes}:0${seconds}`;
-  }
+  return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
 }
-setInterval(displayTimer);
+setInterval(displayTimer, 800);
 
-inputRange.addEventListener('change', handleChangeRange);
+inputRange.addEventListener("change", handleChangeRange);
 function handleChangeRange() {
-  inputRange.value = song.currentTime;
+  song.currentTime = inputRange.value;
+  // inputRange.value là giá trị (vị trí trên thanh input)
 }
