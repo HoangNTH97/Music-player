@@ -1,5 +1,4 @@
 const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 
 const image = $('.music-thumb');
 const song = $('#music-song');
@@ -8,6 +7,8 @@ const playBtn = $('.music-controls-play-inner-play');
 const pauseBtn = $('.music-controls-play-inner-pause');
 const prevBtn = $('.music-controls-prev');
 const nextBtn = $('.music-controls-next');
+const durationTime = $('.music-timer-duration');
+const remainingTime = $('.music-timer-remaining');
 let isPlaying = true;
 let indexSong = 0;
 const musics = [
@@ -87,4 +88,30 @@ function keyEvent(e) {
     isPlaying = true;
   }
 }
+
+function displayTimer() {
+  const {duration, currentTime} = song;
+  if (!duration) {
+    durationTime.textContent = "00:00";
+  } else {
+    durationTime.textContent = formatTimer(duration);
+  }
+
+  if (!currentTime) {
+    remainingTime.textContent = "00:00";
+  } else {
+    remainingTime.textContent = formatTimer(currentTime);
+  }
+}
+
+function formatTimer(number) {
+  const minutes = Math.floor(number / 60);
+  const seconds = Math.round(number % 60);
+  if (seconds >= 10) {
+    return `${minutes}:${seconds}`;
+  } else {
+    return `${minutes}:0${seconds}`;
+  }
+}
+setInterval(displayTimer, 1000);
 
