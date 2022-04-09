@@ -129,7 +129,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0 60px;
+  gap: 0 50px;
   color: black;
 }
 .music-controls-play {
@@ -144,8 +144,8 @@ body {
   border-radius: 100rem;
 }
 .music-controls-play-inner {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 100rem;
   background-image: linear-gradient(117deg, #8122c0, #60b0de, #160a5e 102%);
   display: flex;
@@ -153,7 +153,7 @@ body {
   align-items: center;
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  font-size: 24px;
+  font-size: 20px;
   position: relative;
   z-index: 2;
 }
@@ -163,12 +163,12 @@ body {
 .music-controls-play-inner-play:hover, .music-controls-play-inner-pause:hover {
   color: #f2eff3;
 }
-.music-controls-prev, .music-controls-next {
+.music-controls-repeat, .music-controls-infinite, .music-controls-prev, .music-controls-next {
   cursor: pointer;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
-.music-controls-prev:hover, .music-controls-next:hover {
+.music-controls-repeat:hover, .music-controls-infinite:hover, .music-controls-prev:hover, .music-controls-next:hover {
   color: #f2eff3;
 }
 

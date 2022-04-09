@@ -1,33 +1,79 @@
 const $ = document.querySelector.bind(document);
 
-const image = $('.music-thumb');
-const song = $('#music-song');
-const playButton = $('.music-controls-play-inner');
-const playBtn = $('.music-controls-play-inner-play');
-const pauseBtn = $('.music-controls-play-inner-pause');
-const prevBtn = $('.music-controls-prev');
-const nextBtn = $('.music-controls-next');
-const durationTime = $('.music-timer-duration');
-const remainingTime = $('.music-timer-remaining');
-const inputRange = $('.music-range');
+const images = $(".music-thumb img");
+const titles = $(".music-infomation h3");
+const singer = $(".music-infomation h4");
+const song = $("#music-song");
+const playButton = $(".music-controls-play-inner");
+const playBtn = $(".music-controls-play-inner-play");
+const pauseBtn = $(".music-controls-play-inner-pause");
+const prevBtn = $(".music-controls-prev");
+const nextBtn = $(".music-controls-next");
+const durationTime = $(".music-timer-duration");
+const remainingTime = $(".music-timer-remaining");
+const inputRange = $(".music-range");
 let isPlaying = true;
 let indexSong = 0;
+// const musics = [
+//   'Chay-Ve-Noi-Phia-Anh-Khac-Viet-1.mp3',
+//   'Chay-Ve-Khoc-Voi-Anh-ERIK-2.mp3',
+//   'Bao-Gio-Ket-Hon-Ly-Tuan-Kiet-The-Minh-3.mp3',
+//   'Phai-Dau-Cuoc-Tinh-Bich-Phuong-4.mp3',
+// ];
+/**
+ * musics:
+ * id: 1
+ * title: Holo
+ * src: Holo.mp3
+ * image: unsplash
+ */
+
 const musics = [
-  'Chay-Ve-Noi-Phia-Anh-Khac-Viet-1.mp3',
-  'Chay-Ve-Khoc-Voi-Anh-ERIK-2.mp3',
-  'Bao-Gio-Ket-Hon-Ly-Tuan-Kiet-The-Minh-3.mp3',
-  'Phai-Dau-Cuoc-Tinh-Bich-Phuong-4.mp3',
+  {
+    id: 1,
+    title: "Chạy về nơi phía anh",
+    singer: "Khắc Việt",
+    src: "Chay-Ve-Noi-Phia-Anh-Khac-Viet-1.mp3",
+    image:
+      "https://images.unsplash.com/photo-1511525499366-bc3f823bacb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+  {
+    id: 2,
+    title: "Chạy về khóc với anh",
+    singer: "ERIK",
+    src: "Chay-Ve-Khoc-Voi-Anh-ERIK-2.mp3",
+    image:
+      "https://images.unsplash.com/photo-1628082878598-ed6b930efb74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+  },
+  {
+    id: 3,
+    title: "Bao giờ kết hôn",
+    singer: "Lý Tuấn Kiệt",
+    src: "Bao-Gio-Ket-Hon-Ly-Tuan-Kiet-The-Minh-3.mp3",
+    image:
+      "https://images.unsplash.com/photo-1613313954821-f52621b02c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
+  },
+  {
+    id: 4,
+    title: "Phai dấu cuộc tình",
+    singer: "Bích Phương",
+    src: "Phai-Dau-Cuoc-Tinh-Bich-Phuong-4.mp3",
+    image:
+      "https://images.unsplash.com/photo-1591005680043-1fd6ca4b5985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+  },
 ];
 
-
-song.setAttribute("src", `./music/${musics[indexSong]}`);
-nextBtn.addEventListener('click', () => {
+images.setAttribute("src", musics[indexSong].image);
+titles.textContent = musics[indexSong].title;
+singer.textContent = musics[indexSong].singer;
+song.setAttribute("src", `./music/${musics[indexSong].src}`);
+nextBtn.addEventListener("click", () => {
   changeSong(1);
 });
-prevBtn.addEventListener('click', () => {
+prevBtn.addEventListener("click", () => {
   changeSong(-1);
 });
-song.addEventListener('ended', handleEndedSong);
+song.addEventListener("ended", handleEndedSong);
 
 function handleEndedSong() {
   changeSong(1);
@@ -46,30 +92,31 @@ function changeSong(dir) {
 
     isPlaying = true; // tương tự với prev
   }
-  song.setAttribute("src", `./music/${musics[indexSong]}`); // add đường dẫn vào thẻ html
+  images.setAttribute("src", musics[indexSong].image);
+  titles.textContent = musics[indexSong].title;
+  singer.textContent = musics[indexSong].singer;
+  song.setAttribute("src", `./music/${musics[indexSong].src}`); // add đường dẫn vào thẻ html
   playPause();
 }
 
-
-
-playButton.addEventListener('click', playPause);
-document.addEventListener('keydown', keyEvent);
+playButton.addEventListener("click", playPause);
+document.addEventListener("keydown", keyEvent);
 
 function playPause() {
   if (isPlaying) {
     song.play();
-    playBtn.classList.add('hide');
-    pauseBtn.classList.remove('hide');
-    image.classList.add('rotate');
+    playBtn.classList.add("hide");
+    pauseBtn.classList.remove("hide");
+    images.classList.add("rotate");
 
     // Ngoài cách trên ta còn có thể gán nó cho cả đoạn html
     // playButton.innerHTML = `<ion-icon name="pause" class="music-controls-play-inner-pause"></ion-icon>`;
     isPlaying = false;
   } else {
     song.pause();
-    pauseBtn.classList.add('hide');
-    playBtn.classList.remove('hide');
-    image.classList.remove('rotate');
+    pauseBtn.classList.add("hide");
+    playBtn.classList.remove("hide");
+    images.classList.remove("rotate");
 
     // playButton.innerHTML = `<ion-icon name="play" class="music-controls-play-inner-play"></ion-icon>`;
     isPlaying = true;
@@ -96,7 +143,7 @@ function keyEvent(e) {
 }
 
 function displayTimer() {
-  const {duration, currentTime} = song;
+  const { duration, currentTime } = song;
   inputRange.max = duration;
   inputRange.value = currentTime;
   if (!duration) {
@@ -115,7 +162,9 @@ function displayTimer() {
 function formatTimer(number) {
   const minutes = Math.floor(number / 60);
   const seconds = Math.round(number % 60);
-  return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+  return `${minutes < 10 ? "0" + minutes : minutes}:${
+    seconds < 10 ? "0" + seconds : seconds
+  }`;
 }
 setInterval(displayTimer, 800);
 

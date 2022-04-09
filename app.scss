@@ -132,7 +132,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0 60px; // đây là cách viết tắt của row-gap và column-gap (giá trị đầu là row giá trị sau là column)
+    gap: 0 50px; // đây là cách viết tắt của row-gap và column-gap (giá trị đầu là row giá trị sau là column)
     color: black;
 
     &-play {
@@ -149,8 +149,8 @@ body {
       }
 
       &-inner {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 100rem;
         background-image: linear-gradient(117deg, #8122c0, #60b0de, #160a5e 102%);
         display: flex;
@@ -158,7 +158,7 @@ body {
         align-items: center;
         cursor: pointer;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        font-size: 24px;
+        font-size: 20px;
         position: relative;
         z-index: 2;
 
@@ -174,16 +174,19 @@ body {
       }
     }
 
+    &-repeat,
+    &-infinite, 
     &-prev,
     &-next {
       cursor: pointer;
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
 
       &:hover {
         color: #f2eff3;
       }
     }
+    
   }
 }
 
