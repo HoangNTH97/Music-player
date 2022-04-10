@@ -116,6 +116,10 @@ body {
       margin-top: -6.4px;
       cursor: pointer;
       border: 2px solid #fff;
+      &:hover {
+        transform: scale(1.4);
+        transition: 0.4s;
+      }
     }
   }
 
@@ -203,7 +207,7 @@ body {
 }
 
 .active {
-  color: #c022a3;
+  color: #ec2f93;
 }
 
 .rotate {

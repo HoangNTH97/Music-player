@@ -116,6 +116,10 @@ body {
   cursor: pointer;
   border: 2px solid #fff;
 }
+.music-range::-webkit-slider-thumb:hover {
+  transform: scale(1.4);
+  transition: 0.4s;
+}
 .music-timer {
   display: flex;
   justify-content: space-between;
@@ -180,7 +184,7 @@ body {
 }
 
 .active {
-  color: #c022a3;
+  color: #ec2f93;
 }
 
 .rotate {
