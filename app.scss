@@ -102,7 +102,7 @@ body {
     background: transparent; /* Otherwise white in Chrome */
 
     &::-webkit-slider-runnable-track {
-      background-color: #fff;;
+      background-color: #fff;
       height: 2px;
       cursor: pointer;
     }
@@ -112,7 +112,7 @@ body {
       height: 15px;
       width: 15px;
       border-radius: 50%;
-      background-image: linear-gradient(120deg,#8122c0, #60b0de, #160a5e 102%);
+      background-image: linear-gradient(120deg, #8122c0, #60b0de, #160a5e 102%);
       margin-top: -6.4px;
       cursor: pointer;
       border: 2px solid #fff;
@@ -152,7 +152,12 @@ body {
         width: 40px;
         height: 40px;
         border-radius: 100rem;
-        background-image: linear-gradient(117deg, #8122c0, #60b0de, #160a5e 102%);
+        background-image: linear-gradient(
+          117deg,
+          #8122c0,
+          #60b0de,
+          #160a5e 102%
+        );
         display: flex;
         justify-content: center;
         align-items: center;
@@ -170,23 +175,26 @@ body {
         &-play:hover,
         &-pause:hover {
           color: #f2eff3;
+          transform: scale(1.2);
+          transition: 0.4s;
         }
       }
     }
 
     &-repeat,
-    &-infinite, 
+    &-infinite,
     &-prev,
     &-next {
       cursor: pointer;
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
 
       &:hover {
         opacity: 0.8;
+        transform: scale(1.2);
+        transition: 0.4s;
       }
     }
-    
   }
 }
 
