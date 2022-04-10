@@ -12,8 +12,12 @@ const nextBtn = $(".music-controls-next");
 const durationTime = $(".music-timer-duration");
 const remainingTime = $(".music-timer-remaining");
 const inputRange = $(".music-range");
+const repeatBtn = $(".music-controls-repeat");
+const infiniteBtn = $(".music-controls-infinite");
 let isPlaying = true;
 let indexSong = 0;
+let isRepeat = false;
+let isInfinite = false;
 // const musics = [
 //   'Chay-Ve-Noi-Phia-Anh-Khac-Viet-1.mp3',
 //   'Chay-Ve-Khoc-Voi-Anh-ERIK-2.mp3',
@@ -76,20 +80,56 @@ prevBtn.addEventListener("click", () => {
 
 song.addEventListener("ended", handleEndedSong);
 playButton.addEventListener("click", playPause);
-document.addEventListener("keydown", keyEvent)
+document.addEventListener("keydown", keyEvent);
 
+repeatBtn.addEventListener("click", function () {
+  if (!isRepeat) {
+    isRepeat = true;
+    repeatBtn.classList.add("active");
+  } else {
+    isRepeat = false;
+    repeatBtn.classList.remove("active");
+  }
+});
 
+infiniteBtn.addEventListener("click", function () {
+  if (!isInfinite) {
+    isInfinite = true;
+    infiniteBtn.classList.add("active");
+  } else {
+    isInfinite = false;
+    infiniteBtn.classList.remove("active");
+  }
+});
+
+// function activeBtn(btn) {
+//   if (isPlaying) {
+//     btn.classList.add("active");
+//     isPlaying = false;
+//   } else {
+//     btn.classList.remove("active");
+//     isPlaying = true;
+//   }
+// }
 
 function handleEndedSong() {
-  if (indexSong < musics.length -1) {
-    changeSong(1);
-  } else {
+  if (isRepeat) {
+    isPlaying = true;
     playPause();
+  } else if (indexSong < musics.length - 1) {
+    changeSong(1);
+  } else if (indexSong >= musics.length - 1 && !isInfinite && !isRepeat) {
+    playPause();
+  } else if (isInfinite && indexSong >= musics.length - 1) {
+    isPlaying = true;
+    changeSong(1);
   }
-  
-  
-} // Ta cần phải viết như này vì khi nào cần nó mới chạy, nếu viết thẳng vào thì nó sẽ luôn được gọi và nó sẽ chạy
-
+}
+/**
+ * Khi isRepeat = true: gán isPlaying bằng true sau đó gọi hàm playPause(), vì lúc này isPlaying là true nên gọi hàm playPause() sẽ phát lại bài nhạc
+ * Khi isRepeat = false sẽ nhảy đến trường hợp tiếp theo, lúc này bài nhạc không phải bài cuối cùng nên sau khi phát xong sẽ chạy hàm changeSong(1) là next bài
+ * Trường hợp cuối cùng khi ở cuối bài isRepeat = true thì vẫn sẽ lọt vô case đầu tiên, nhưng nếu isRepeat = false thì sẽ chạy hàm playPause() và dừng bài nhạc, lúc này isPlaying = false nhé
+ */
 
 function changeSong(dir) {
   if (dir === 1) {
@@ -110,8 +150,6 @@ function changeSong(dir) {
   song.setAttribute("src", `./music/${musics[indexSong].src}`); // add đường dẫn vào thẻ html
   playPause();
 }
-
-;
 
 function playPause() {
   if (isPlaying) {

@@ -168,11 +168,15 @@ body {
   font-size: 1.2rem;
 }
 .music-controls-repeat:hover, .music-controls-infinite:hover, .music-controls-prev:hover, .music-controls-next:hover {
-  color: #f2eff3;
+  opacity: 0.8;
 }
 
 .hide {
   display: none;
+}
+
+.active {
+  color: #c022a3;
 }
 
 .rotate {
