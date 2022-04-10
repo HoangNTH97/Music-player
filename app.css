@@ -68,6 +68,7 @@ body {
 }
 .music-header-name {
   color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 .music-thumb {
   width: 150px;
