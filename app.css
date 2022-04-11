@@ -63,12 +63,15 @@ body {
 }
 .music-header {
   display: flex;
-  justify-content: flex-end;
-  font-size: 1rem;
+  justify-content: space-between;
+  font-size: 0.8rem;
 }
-.music-header-name {
+.music-header-name1 {
   color: rgb(255, 255, 255);
   cursor: pointer;
+}
+.music-header-name2 {
+  color: rgb(255, 255, 255);
 }
 .music-thumb {
   width: 150px;
@@ -207,6 +210,7 @@ body {
 
   .music {
     max-width: 350px;
+    padding: 20px 20px 20px;
   }
   .music-controls {
     gap: 0 30px;

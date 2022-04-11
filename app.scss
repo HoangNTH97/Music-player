@@ -59,12 +59,15 @@ body {
 
   &-header {
     display: flex;
-    justify-content: flex-end;
-    font-size: 1rem;
+    justify-content: space-between;
+    font-size: 0.8rem;
 
-    &-name {
+    &-name1 {
       color: rgb(255, 255, 255);
       cursor: pointer;
+    }
+    &-name2 {
+      color: rgb(255, 255, 255);
     }
   }
 
@@ -230,6 +233,7 @@ body {
   }
   .music {
     max-width: 350px;
+    padding: 20px 20px 20px;
     &-controls {
       gap: 0 30px;
     }
