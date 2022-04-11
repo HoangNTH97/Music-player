@@ -35,11 +35,10 @@ let isInfinite = false;
 const musics = [
   {
     id: 1,
-    title: "Loser",
+    title: "Still Life",
     singer: "BIGBANG",
-    src: "Loser-BIGBANG-6291940.mp3",
-    image:
-      "https://images.unsplash.com/photo-1511525499366-bc3f823bacb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    src: "StillLife-BIGBANG-5.mp3",
+    image: "https://i.ytimg.com/vi/D2auvkeuB6A/maxresdefault.jpg",
   },
   {
     id: 2,
@@ -59,11 +58,11 @@ const musics = [
   },
   {
     id: 4,
-    title: "Still Life",
+    title: "Loser",
     singer: "BIGBANG",
-    src: "StillLife-BIGBANG-5.mp3",
+    src: "Loser-BIGBANG-6291940.mp3",
     image:
-      "https://i.ytimg.com/vi/D2auvkeuB6A/maxresdefault.jpg",
+      "https://images.unsplash.com/photo-1511525499366-bc3f823bacb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
 ];
 
