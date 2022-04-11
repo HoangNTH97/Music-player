@@ -35,35 +35,35 @@ let isInfinite = false;
 const musics = [
   {
     id: 1,
-    title: "Chạy về nơi phía anh",
-    singer: "Khắc Việt",
-    src: "Chay-Ve-Noi-Phia-Anh-Khac-Viet-1.mp3",
+    title: "Loser",
+    singer: "BIGBAng",
+    src: "Loser-BIGBANG-6291940",
     image:
       "https://images.unsplash.com/photo-1511525499366-bc3f823bacb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: 2,
-    title: "Chạy về khóc với anh",
-    singer: "ERIK",
-    src: "Chay-Ve-Khoc-Voi-Anh-ERIK-2.mp3",
+    title: "Blue",
+    singer: "BIGBANG",
+    src: "Blue-BIGBANG-6292792.mp3",
     image:
       "https://images.unsplash.com/photo-1628082878598-ed6b930efb74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: 3,
-    title: "Bao giờ kết hôn",
-    singer: "Lý Tuấn Kiệt",
-    src: "Bao-Gio-Ket-Hon-Ly-Tuan-Kiet-The-Minh-3.mp3",
+    title: "To Night",
+    singer: "BIGBANG",
+    src: "Tonight-BIGBANG-6.mp3",
     image:
       "https://images.unsplash.com/photo-1613313954821-f52621b02c26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
   },
   {
     id: 4,
-    title: "Phai dấu cuộc tình",
-    singer: "Bích Phương",
-    src: "Phai-Dau-Cuoc-Tinh-Bich-Phuong-4.mp3",
+    title: "Still Life",
+    singer: "BIGBANG",
+    src: "StillLife-BIGBANG-5.mp3",
     image:
-      "https://images.unsplash.com/photo-1591005680043-1fd6ca4b5985?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+      "https://i.ytimg.com/vi/D2auvkeuB6A/maxresdefault.jpg",
   },
 ];
 
