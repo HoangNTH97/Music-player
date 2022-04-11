@@ -223,6 +223,15 @@ body {
 
 @media (max-width: 739px) {
   body {
-    padding: 0;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .music {
+    max-width: 350px;
+    &-controls {
+      gap: 0 30px;
+    }
   }
 }
