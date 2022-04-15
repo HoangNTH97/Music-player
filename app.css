@@ -216,5 +216,8 @@ body {
     gap: 0 30px;
   }
 }
+body {
+  width: 100%;
+}
 
 /*# sourceMappingURL=app.css.map */
